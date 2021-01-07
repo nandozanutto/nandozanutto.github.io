@@ -1,12 +1,13 @@
 h1{
     text-align: center;
     font-size: 100px;
+    color: white;
 }
 p{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     font-size: 80px;
-    color: blue;
+    color: white;
 }
 img{
     width: 50%;
@@ -15,4 +16,7 @@ img{
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+body{
+    background-color: black;
 }

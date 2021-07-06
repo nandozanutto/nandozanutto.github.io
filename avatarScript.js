@@ -2,8 +2,9 @@ function changeAsset(isUp, asset){
     var cabeloSrc = document.getElementById("cabelo").src;
     // document.getElementById("cabelo").src = "file:///home/nandozanutto/%C3%81rea%20de%20Trabalho/testAvatar/Assets_customizador/cabelo02_cor01.png"
     // var n = str.search("cabelo");
-    document.write(cabeloSrc);
-    var aux = cabeloSrc.charAt(89) + cabeloSrc.charAt(90);
+    var numPos = cabeloSrc.indexOf("cabelo");
+    // document.write(numPos);
+    var aux = cabeloSrc.charAt(numPos+6) + cabeloSrc.charAt(numPos+7);
     var number = parseInt(aux);
     number = number+1;
     if(number>13)

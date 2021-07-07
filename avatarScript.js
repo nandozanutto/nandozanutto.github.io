@@ -17,11 +17,29 @@ function changeAsset(isUp, asset){
 
         }
     }
+    else if(!asset.localeCompare("corpo")){
+        var corpoSrc = document.getElementById("corpo").src;
+        var numPos = corpoSrc.indexOf("corpo");
+        var aux = corpoSrc.charAt(numPos + 6);
+        if(aux === "f"){
+            var newSrc = corpoSrc.slice(0,numPos);
+            document.getElementById("corpo").src = newSrc + "corpo_m_cor1.png";
+            document.getElementById("blusa").src = newSrc + "corpo_m_blusa1_cor1.png";
+            document.getElementById("calca").src = newSrc + "corpo_m_calca1_cor1.png";
+            document.getElementById("calcado").src = newSrc + "corpo_m_calcado1_cor1.png";
+        }else{
+            var newSrc = corpoSrc.slice(0,numPos);
+            document.getElementById("corpo").src = newSrc + "corpo_f_cor1.png";
+            document.getElementById("blusa").src = newSrc + "corpo_f_blusa1_cor1.png";
+            document.getElementById("calca").src = newSrc + "corpo_f_calca1_cor1.png";
+            document.getElementById("calcado").src = newSrc + "corpo_f_calcado1_cor1.png";
+        }
+    }
 
-    else if(1){
+    else{
         var assetSrc = document.getElementById(asset).src;
         var numPos = assetSrc.indexOf(asset);
-        aux = assetSrc.charAt(numPos + asset.length);
+        var aux = assetSrc.charAt(numPos + asset.length);
         var number = parseInt(aux);
         number++;
         if(number>limits[asset])

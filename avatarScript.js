@@ -23,11 +23,17 @@ function changeAsset(isUp, asset){
         var aux = corpoSrc.charAt(numPos + 6);
         if(aux === "f"){
             var newSrc = corpoSrc.slice(0,numPos);
-            var aux2 = newSrc.concat("corpo_m_cor1.png")
+            var aux2 = newSrc.concat("corpo_m_cor1.png");
             document.getElementById("corpo").src = aux2;
-            document.getElementById("blusa").src = newSrc + "corpo_m_blusa1_cor1.png";
-            document.getElementById("calca").src = newSrc + "corpo_m_calca1_cor1.png";
-            document.getElementById("calcado").src = newSrc + "corpo_m_calcado1_cor1.png";
+
+            var aux3 = newSrc.concat("corpo_m_blusa1_cor1.png");
+            document.getElementById("blusa").src = aux3;
+            
+            var aux4 = newSrc.concat("corpo_m_calca1_cor1.png");             
+            document.getElementById("calca").src = aux4;
+            
+            var aux5 = newSrc.concat("corpo_m_calcado1_cor1.png");
+            document.getElementById("calcado").src = aux5;
         }else{
             var newSrc = corpoSrc.slice(0,numPos);
             document.getElementById("corpo").src = newSrc + "corpo_f_cor1.png";

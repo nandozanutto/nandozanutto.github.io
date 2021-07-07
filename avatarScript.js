@@ -36,10 +36,17 @@ function changeAsset(isUp, asset){
             document.getElementById("calcado").src = aux5;
         }else{
             var newSrc = corpoSrc.slice(0,numPos);
-            document.getElementById("corpo").src = newSrc + "corpo_f_cor1.png";
-            document.getElementById("blusa").src = newSrc + "corpo_f_blusa1_cor1.png";
-            document.getElementById("calca").src = newSrc + "corpo_f_calca1_cor1.png";
-            document.getElementById("calcado").src = newSrc + "corpo_f_calcado1_cor1.png";
+            var aux2 = newSrc.concat("corpo_f_cor1.png");
+            document.getElementById("corpo").src = aux2;
+
+            var aux3 = newSrc.concat("corpo_f_blusa1_cor1.png");
+            document.getElementById("blusa").src = aux3;
+            
+            var aux4 = newSrc.concat("corpo_f_calca1_cor1.png");             
+            document.getElementById("calca").src = aux4;
+            
+            var aux5 = newSrc.concat("corpo_f_calcado1_cor1.png");
+            document.getElementById("calcado").src = aux5;
         }
     }
 

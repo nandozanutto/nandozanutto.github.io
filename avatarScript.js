@@ -1,24 +1,38 @@
 function changeAsset(isUp, asset){
-    var cabeloSrc = document.getElementById("cabelo").src;
-    // document.getElementById("cabelo").src = "file:///home/nandozanutto/%C3%81rea%20de%20Trabalho/testAvatar/Assets_customizador/cabelo02_cor01.png"
-    // var n = str.search("cabelo");
-    var numPos = cabeloSrc.indexOf("cabelo");
-    // document.write(numPos);
-    var aux = cabeloSrc.charAt(numPos+6) + cabeloSrc.charAt(numPos+7);
-    var number = parseInt(aux);
-    number = number+1;
-    if(number>13)
-        number=1;
+    const limits = {oculos:6, calcado:2, calca:3, blusa:8, brinco:2, boca:4, nariz:2, sobrancelha:4};
+    if(!asset.localeCompare("cabelo")){
+        var cabeloSrc = document.getElementById("cabelo").src;
+        var numPos = cabeloSrc.indexOf("cabelo");
+        var aux = cabeloSrc.charAt(numPos+6) + cabeloSrc.charAt(numPos+7);
+        var number = parseInt(aux);
+        number++;
+        if(number>13)
+            number=1;
 
-    var aux2 = "cabelo".concat(aux);
-    if(number<10){    
-        document.getElementById("cabelo").src = cabeloSrc.replace(aux2, "cabelo0" + number);
-    }else{
-        document.getElementById("cabelo").src = cabeloSrc.replace(aux2, "cabelo" + number);
+        var aux2 = "cabelo".concat(aux);
+        if(number<10){    
+            document.getElementById("cabelo").src = cabeloSrc.replace(aux2, "cabelo0" + number);
+        }else{
+            document.getElementById("cabelo").src = cabeloSrc.replace(aux2, "cabelo" + number);
 
+        }
+    }
+
+    else if(1){
+        var assetSrc = document.getElementById(asset).src;
+        var numPos = assetSrc.indexOf(asset);
+        aux = assetSrc.charAt(numPos + asset.length);
+        var number = parseInt(aux);
+        number++;
+        if(number>limits[asset])
+            number=1;
+        var aux2 = asset.concat(aux);
+        document.getElementById(asset).src = assetSrc.replace(aux2, asset + number);
     }
 
 
+    
+}
     // var n = str.length - 1;
     // if(isUp){
     //     var res = parseInt(str.charAt(n)) + 1
@@ -34,4 +48,52 @@ function changeAsset(isUp, asset){
     // document.getElementById("avatarImage").src = old.replace(str, str2);
     
     // document.getElementById("myForm").submit();  
-}
+
+    
+    
+    //************************************** */
+    // else if(!asset.localeCompare("blusa")){
+    //     var blusaSrc = document.getElementById("blusa").src;
+    //     var numPos = blusaSrc.indexOf("blusa");
+    //     aux = blusaSrc.charAt(numPos + 5);
+    //     var number = parseInt(aux);
+    //     number++;
+    //     if(number>8)
+    //         number=1;
+    //     var aux2 = "blusa".concat(aux);
+    //     document.getElementById("blusa").src = blusaSrc.replace(aux2, "blusa" + number);
+    // }
+    // else if(!asset.localeCompare("calca")){
+    //     var calcaSrc = document.getElementById("calca").src;
+    //     var numPos = calcaSrc.indexOf("calca");
+    //     aux = calcaSrc.charAt(numPos + 5);
+    //     var number = parseInt(aux);
+    //     number++;
+    //     if(number>3)
+    //         number=1;
+    //     var aux2 = "calca".concat(aux);
+    //     document.getElementById("calca").src = calcaSrc.replace(aux2, "calca" + number);
+    // }
+    // else if(!asset.localeCompare("calcado")){
+    //     var calcadoSrc = document.getElementById("calcado").src;
+    //     var numPos = calcadoSrc.indexOf("calcado");
+    //     aux = calcadoSrc.charAt(numPos + 7);
+    //     var number = parseInt(aux);
+    //     number++;
+    //     if(number>2)
+    //         number=1;
+    //     var aux2 = "calcado".concat(aux);
+    //     document.getElementById("calcado").src = calcadoSrc.replace(aux2, "calcado" + number);
+    // }
+    // else if(!asset.localeCompare("oculos")){
+    //     var assetInput = "oculos";
+    //     var oculosSrc = document.getElementById("oculos").src;
+    //     var numPos = oculosSrc.indexOf("oculos");
+    //     aux = oculosSrc.charAt(numPos + assetInput.length);
+    //     var number = parseInt(aux);
+    //     number++;
+    //     if(number>6)
+    //         number=1;
+    //     var aux2 = "oculos".concat(aux);
+    //     document.getElementById("oculos").src = oculosSrc.replace(aux2, "oculos" + number);
+    // }

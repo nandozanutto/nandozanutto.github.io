@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .fishes
+        {
+          position: relative;
+          top: 0;
+          left: 0;
+        }
+        .fish
+        {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+        }
+        img{
+          width: 40%;
+          height: auto;
+        }
+      </style>
+      <script type="text/javascript" src="avatarScript.js"></script> 
+</head>
+<body>
+    <div style="position: relative; left: 0; top: 0;">
+        <img src="Assets_customizador/corpo_f_cor1.png" class="fishes"/>
+        <img src="Assets_customizador/corpo_f_calca1_cor1.png" class="fish" id="calca"/>
+        <img src="Assets_customizador/corpo_f_calcado1_cor1.png" class="fish" id="calcado"/>
+        <img src="Assets_customizador/brinco1_cor1.png" class="fish" id="brinco"/>
+        <img src="Assets_customizador/oculos1.png" class="fish" id="oculos"/>
+        <img src="Assets_customizador/rosto_boca1.png" class="fish" id="boca"/>
+        <img src="Assets_customizador/rosto_nariz1.png" class="fish" id="nariz"/>
+        <img src="Assets_customizador/rosto_olho1.png" class="fish"/> 
+        <img src="Assets_customizador/cabelo01_cor01.png" class="fish" id="cabelo" />
+        <img src="Assets_customizador/corpo_f_blusa1_cor1.png" class="fish" id="blusa"/>
+        <img src="Assets_customizador/rosto_sobrancelha1.png" class="fish" id="sobrancelha"/>
+      </div>
+
+      <input type="button" onclick="changeAsset(1, 'cabelo')" value="cabelo">
+      <input type="button" onclick="changeAsset(1, 'blusa')" value="blusa">
+      <input type="button" onclick="changeAsset(1, 'calca')" value="calca">
+      <input type="button" onclick="changeAsset(1, 'calcado')" value="calcado">
+      <input type="button" onclick="changeAsset(1, 'oculos')" value="oculos">
+      <input type="button" onclick="changeAsset(0, 'brinco')" value="brinco">
+      <input type="button" onclick="changeAsset(1, 'boca')" value="boca">
+      <input type="button" onclick="changeAsset(0, 'nariz')" value="nariz">
+      <input type="button" onclick="changeAsset(0, 'sobrancelha')" value="sobrancelha">
+
+<!-- <div class="parent-img">
+    <img src="corpo_f_cor1.png" class="parent-img-responsive" />
+    <img src="corpo_f_calca2_cor3.png" class="child-img"/>
+</div> -->
+
+<!-- <div id="container">
+    <div id="main_image"><img src="corpo_f_cor1.png" /></div>
+    <div id="overlay_image"><img src="corpo_f_calca2_cor3.png"/></div>
+</div> -->
+
+</body>
+</html>

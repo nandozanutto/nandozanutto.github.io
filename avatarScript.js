@@ -101,7 +101,61 @@ function changeColor(asset){
     document.getElementById(asset).src = assetSrc.replace(aux2, "_cor" + number);
 }
 
+function changeUrlNews(){
+    var urlSrc = document.getElementById("linkToNews").href;
+    // https://globomee.run-us-west2.goorm.io/
+    // "https://globomee.run-us-west2.goorm.io/?corpo=x&calca=x&blusa=x&calcado=x&boca=x&nariz=x&olho=x&sobrancelha=x&cabelo=x&oculos=x&brinco=x"
+    var acorpoUrl = document.getElementById("corpo").src;
+    var acalcaUrl = document.getElementById("calca").src;
+    var ablusaUrl = document.getElementById("blusa").src;
+    var acalcadoUrl = document.getElementById("calcado").src;
+    var abocaUrl = document.getElementById("boca").src;
+    var anarizUrl = document.getElementById("nariz").src;
+    var aolhoUrl = document.getElementById("olho").src;
+    var asobrancelhaUrl = document.getElementById("sobrancelha").src;
+    var acabeloUrl = document.getElementById("cabelo").src;
+    var aoculosUrl = document.getElementById("oculos").src;
+    var abrincoUrl = document.getElementById("brinco").src;
 
+    //corpoUrl.length-1
+    var numPos = acorpoUrl.indexOf("corpo");
+    var corpoUrl = acorpoUrl.slice(numPos, acorpoUrl.length);
+    
+    numPos = acalcaUrl.indexOf("corpo");
+    var calcaUrl = acalcaUrl.slice(numPos, acalcaUrl.length);
+    
+    numPos = ablusaUrl.indexOf("corpo");
+    var blusaUrl = ablusaUrl.slice(numPos, ablusaUrl.length);
+    
+    numPos = acalcadoUrl.indexOf("corpo");
+    var calcadoUrl = acalcadoUrl.slice(numPos, acalcadoUrl.length);
+    
+    numPos = abocaUrl.indexOf("rosto");
+    var bocaUrl = abocaUrl.slice(numPos, abocaUrl.length);
+    
+    numPos = anarizUrl.indexOf("rosto");
+    var narizUrl = anarizUrl.slice(numPos, anarizUrl.length);
+    
+    numPos = aolhoUrl.indexOf("rosto");
+    var olhoUrl = aolhoUrl.slice(numPos, aolhoUrl.length);
+    
+    numPos = asobrancelhaUrl.indexOf("rosto");
+    var sobrancelhaUrl = asobrancelhaUrl.slice(numPos, asobrancelhaUrl.length);
+    
+    numPos = acabeloUrl.indexOf("cabelo");
+    var cabeloUrl = acabeloUrl.slice(numPos, acabeloUrl.length);
+    
+    numPos = aoculosUrl.indexOf("oculos");
+    var oculosUrl = aoculosUrl.slice(numPos, aoculosUrl.length);
+    
+    numPos = abrincoUrl.indexOf("brinco");
+    var brincoUrl = abrincoUrl.slice(numPos, abrincoUrl.length);
+
+
+    document.getElementById("linkToNews").href = `https://globomee.run-us-west2.goorm.io/?corpo=${corpoUrl}&calca=${calcaUrl}&blusa=${blusaUrl}&calcado=${calcadoUrl}&boca=${bocaUrl}&nariz=${narizUrl}&olho=${olhoUrl}&sobrancelha=${sobrancelhaUrl}&cabelo=${cabeloUrl}&oculos=${oculosUrl}&brinco=${brincoUrl}`
+
+
+}
 
     // var n = str.length - 1;
     // if(isUp){

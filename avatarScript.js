@@ -152,7 +152,7 @@ function changeUrlNews(){
     var brincoUrl = abrincoUrl.slice(numPos, abrincoUrl.length);
 
 
-    document.getElementById("linkToNews").href = `https://globomee.run-us-west2.goorm.io/?corpo=${corpoUrl}&calca=${calcaUrl}&blusa=${blusaUrl}&calcado=${calcadoUrl}&boca=${bocaUrl}&nariz=${narizUrl}&olho=${olhoUrl}&sobrancelha=${sobrancelhaUrl}&cabelo=${cabeloUrl}&oculos=${oculosUrl}&brinco=${brincoUrl}&noticia=noticia1`
+    document.getElementById("linkToNews").href = `https://2c47e80bb9a2.ngrok.io/?corpo=${corpoUrl}&calca=${calcaUrl}&blusa=${blusaUrl}&calcado=${calcadoUrl}&boca=${bocaUrl}&nariz=${narizUrl}&olho=${olhoUrl}&sobrancelha=${sobrancelhaUrl}&cabelo=${cabeloUrl}&oculos=${oculosUrl}&brinco=${brincoUrl}&noticia=noticia1`
 
 
 }

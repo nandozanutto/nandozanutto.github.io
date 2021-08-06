@@ -80,12 +80,12 @@
     
         <h3>Testes de execução</h3>
         
-        Os testes abaixo comparam uma comunicação criptografada com uma comunicação normal. Do lado esquerdo o cliente, do lado direito o servidor. E abaixo está a leitura dos pacotes feita por um usuário malicioso. 
+        Os testes abaixo comparam uma comunicação criptografada com uma comunicação normal. Do lado esquerdo o cliente, do lado direito o servidor. E abaixo está a leitura dos pacotes feita por um usuário malicioso que está 'sniffando' a rede, ou seja, está usando algum sniffer que verifica todos os pacotes TCP que chegam no loopback.
         <h4>Teste 1</h4>
         <img src="./images/teste1.png" style="width: 100%;" alt="teste1">
         <img src="./images/teste1sniff.png" style="display: block; width: 70%;" alt="sniff1">
         Neste teste o usuário faz uma comunicação com criptografia. Observe que o usuário malicioso só tem acesso à mensagem criptografada e as chaves parciais. Porém, sem a chave inteira não é possível recuperar
-        a mensagem original. No fim da comunicação é feito um teste para verificar a integridade da criptografia, utilizando chaves aleatórias. Observe que nenhuma delas conseguiu descriptografar a mensagem.
+        a mensagem original. No fim da comunicação é feito um teste para verificar a integridade da criptografia, utilizando chaves aleatórias. Observe que nenhuma delas conseguiu descriptografar a mensagem, recebendo o output "Wrong Password!!"
         <h4>Teste 2</h4>
         <img src="./images/teste2.png" style="width: 100%;" alt="teste1">
         <img src="./images/teste2sniff.png" style="display: block; width: 70%;" alt="sniff1">

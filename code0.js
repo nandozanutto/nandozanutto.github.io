@@ -62,7 +62,7 @@ gdjs.New_32sceneCode.condition0IsTrue_0.val = false;
 {
 gdjs.New_32sceneCode.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.timerElapsedTime(runtimeScene, 30, "CountDown");
 }if (gdjs.New_32sceneCode.condition0IsTrue_0.val) {
-{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "New scene2", false);
+{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "vitoria", false);
 }}
 
 }
@@ -325,7 +325,7 @@ gdjs.New_32sceneCode.condition0IsTrue_0.val = false;
 {
 gdjs.New_32sceneCode.condition0IsTrue_0.val = gdjs.evtTools.variable.getVariableNumber(runtimeScene.getVariables().getFromIndex(0)) == 0;
 }if (gdjs.New_32sceneCode.condition0IsTrue_0.val) {
-{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "New scene2", false);
+{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "derrota", false);
 }}
 
 }

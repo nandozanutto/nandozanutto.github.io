@@ -1,0 +1,92 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include "smpl.h"
+
+//defini-se eventos
+#define test 1
+#define fault 2
+#define repair 3
+
+//define-se descritor do nodo smpl
+typedef struct sisdis
+{
+    int id;//idenficador da facility smpl
+    int *State;
+    //facility é um recurso simulado do smpl
+    //outras variaveis do processo sao declaradas aqui
+}tnodo;
+
+tnodo *nodo;
+
+int main(int argc, char* argv[]){
+    // setvbuf(stdout, NULL, _IONBF, 0);
+    static int N,//numero total de processos
+        token, //processo que está executando num instante de tempo
+        event, //evento
+        r, i;
+        static char fa_name[5];//nome da facility
+
+    if(argc!=2){
+        puts("uso incorreto");
+        exit(1);
+    }
+
+    N = atoi(argv[1]);
+    smpl(0, "Um exemplo de simulação");
+    reset();
+    stream(1);
+
+    //inicialização de variaveis
+    nodo = (tnodo *)malloc(sizeof(tnodo)*N);
+    for(i=0; i<N; i++){
+        memset(fa_name,'\0', 5);
+        sprintf(fa_name, "%d", i);
+        nodo[i].id = facility(fa_name, 1);
+    }
+
+    //escalonar eventos 
+
+    for(i=0; i<N; i++){
+        schedule(test, 30.0, i);//estamos escalonando testes para todos os nodos executarem no tempo 30
+    }
+
+    schedule(fault, 31.0, 1);//processo 1 falha no tempo 31
+    schedule(fault, 80, 2);//processo 2 falha no tempo 31
+    schedule(repair, 61.0, 1);//processo 1 recupera no tempo 61
+    schedule(repair, 110, 2);//processo 2 recupera no tempo 110
+
+    printf("Agendamentos:\n");
+    printf("1 falha em 31.0\n1 recupera em 61.0\n2 falha em 80\n2 recupera em 110\n\n");
+
+    while(time() < 150){
+        cause(&event, &token);
+        switch(event){
+            case test:
+                if(status(nodo[token].id) != 0) break; //se o testador testar falho ele nao testa
+                // printf("O nodo %d vai testar no tempo %3.1f\n", token, time());
+                if(status(nodo[(token+1)%N].id) == 0)//checa o próximo processo do anel
+                    printf("O nodo %d testou o nodo %d correto no tempo %3.1f\n", token, (token+1)%N, time());
+                else
+                    printf("O nodo %d testou o nodo %d falho no tempo %3.1f\n", token, (token+1)%N, time());
+
+                schedule(test, 30.0, token);
+                break;
+            case fault:
+                r = request(nodo[token].id, token, 0);
+                if(r!=0){
+                    puts("não foi possível falhar o nodo....");
+                    break;
+                }
+                printf("O nodo %d falhou no tempo %3.1f\n", token, time());
+                break;
+            case repair:
+                release(nodo[token].id, token);
+                printf("O nodo %d recuperou no tempo %3.1f\n", token, time());
+                schedule(test, 30.0, token);
+                break;
+        }
+    }
+
+    exit(0);
+}
+

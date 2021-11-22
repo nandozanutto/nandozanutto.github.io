@@ -1,3 +1,8 @@
+/*  Programa: trabalho da disciplina Sistemas Distribuídos, prof Elias Duarte
+    Autor: Fernando Zanutto GRR20182625
+    Data da última modificação: 10/11/2021
+*/
+
 /**********************************************************************/
 /*                                                                    */
 /*                       File "smpl.c"                                */
